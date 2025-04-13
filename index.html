@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aashmi Patro | Digital Portfolio</title>
+    <style>
+        body {
+            background-color: #001a33; /* darker blue */
+            color: white; /* changed to white */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            font-size: 1.3rem; /* increased base font size */
+        }
+        .header {
+            background-color: #00264d;
+            padding: 50px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+        .header img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #004080;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 4rem; /* increased size */
+            margin: 0;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        h2 {
+            font-size: 2.8rem; /* increased size */
+            color: white;
+            text-align: center;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            text-decoration: underline; /* added underline */
+            text-underline-offset: 10px; /* space between text and underline */
+        }
+        h3 {
+            font-size: 2.2rem; /* increased size */
+            color: white;
+            margin-top: 35px;
+            text-align: left; /* left aligned */
+        }
+        h4 {
+            font-size: 1.8rem; /* increased size */
+            color: white;
+            margin-top: 25px;
+            text-align: left; /* left aligned */
+        }
+        a {
+            color: white;
+            background-color: #00509e;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 8px 0;
+            transition: all 0.3s ease;
+            font-size: 1.3rem; /* increased size */
+        }
+        a:hover {
+            background-color: #007acc;
+            transform: translateY(-2px);
+        }
+        nav {
+            background-color: #003366;
+            padding: 18px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            margin: 0 15px;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 1.3rem; /* increased size */
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px 50px;
+        }
+        ul, p {
+            text-align: left;
+            font-size: 1.3rem; /* increased size */
+        }
+        ul {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 25px;
+        }
+        .img-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .img-grid img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid #004080;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .img-grid img:hover {
+            transform: scale(1.05);
+        }
+        .project-link {
+            margin: 20px 0;
+        }
+        .center {
+            text-align: center;
+        }
+        .left {
+            text-align: left;
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        /* Bar chart styles */
+        .skill-container {
+            margin: 25px 0;
+        }
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 1.3rem; /* increased size */
+        }
+        .skill-bar {
+            height: 30px;
+            background-color: #003366;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #4da6ff, #0077cc);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .header div {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .header img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            nav a {
+                display: block;
+                margin: 8px auto;
+                width: 80%;
+            }
+            .img-grid img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            background-color: #00264d;
+            padding: 50px 0;
+            color: white;
+        }
+        .contact-card {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            text-align: center;
+        }
+        .contact-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .contact-card h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .contact-info a {
+            display: block;
+            margin: 15px 0;
+            font-size: 1.3rem;
+        }
+        footer {
+            background-color: #001a33;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Parent images styling */
+        .parent-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .parent-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #004080;
+            object-fit: cover;
+        }
+        .parent-content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div>
+        <img src="pics1/aashmi2.jpg"/>
+        <h1>Welcome to My Portfolio</h1>
+        <img src="pics1/aashmi1.jpg"/>
+    </div>
+</div>
+
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#career">Career</a>
+    <a href="#history">History</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#education">Values</a>
+    <a href="#education">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="section center">
+        <h2>Hello! I'm Aashmi Patro</h2>
+        <p>B.Tech in Electronics and Telecommunication (ENTC) at MIT Academy of Engineering (AOE)</p>
+    </div>
+
+    <div class="section center" id="about">
+        <h2>About Me</h2>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <div style="max-width: 600px; text-align: left;">
+                <p>I'm a first-year B.Tech student in Electronics and Telecommunication (ENTC), passionate about learning and exploring new things every day. I believe in growing through challenges and never giving up, no matter how tough the journey gets. With a curious mind and a determined heart, I always strive to do my best and turn every opportunity into a stepping stone toward success. A little about me — I'm an optimistic, hardworking girl who loves to stay motivated, support others, and keep chasing my dreams with a smile.</p>
+            </div>
+            <div style="flex-shrink: 0;">
+                <img src="pics1/mine photo.jpg.png" width="300" height="300" style="border-radius: 50%; border: 5px solid #004080; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rest of your content remains exactly the same -->
+    <div class="section left" id="career">
+        <h2>Career</h2>
+        <h3><u>Professional Career:-</u></h3>
+        <ul>
+            <li>I want to build a career in the hardware and electronics field, working with circuits and devices.</li>
+            <li>I'm interested in learning about embedded systems and real-time hardware projects.</li>
+            <li>I want to work as a freelance web developer, designing simple and creative websites.</li>
+            <li>I am passionate towards video editing and would love to improve my skills in creating and editing content.</li>
+            <li>I want to keep learning new things, do internships, and take part in real-world projects.</li>
+            <li> I am passionate enough to work with clients or startups and bring their ideas to life.</li>
+        </ul>
+
+        <h3><u>Personal Career:-</u></h3>
+        <ul>
+            <li>I want to be a strong and independent personality, making my own path in life.</li>
+            <li> My aim is to start my own NGO to help people and bring a positive change.</li>
+            <li>I'm a enthusiastic classical Kathak dancer, and I love expressing myself through art.</li>
+            <li>I enjoy cooking, especially trying new recipes and making creative dishes.</li>
+            <li>I love writing journals, as it helps me reflect and stay connected to myself.</li>
+            <li>I want to travel the world and learn about different cultures.</li>
+            <li>I'm excited to try all kinds of adventure sports and step out of my comfort zone.</li>
+            <li>I believe life is a beautiful journey, and want to explore and enjoy it to the fullest.</li>
+        </ul>
+    </div>
+
+   <div class="section left" id="history">
+        <h2>History</h2>
+        <h3><u>Field of Study:-</u></h3>
+        <ul>
+            <li>Passed 10th grade with First Class</li>
+            <li>Passed 11th grade with First Class</li>
+            <li>Passed 12th grade with First Class</li>
+            <li>Scored a decent rank in JEE Mains</li>
+            <li>Performed well in MHT-CET</li>
+            <li>Appeared and did well in many competitive exams</li>
+            <li>I have knowledge of programming languages like HTML, CSS, Python, and C.</li>
+            <li>I also have some basic and general knowledge about electronics, circuits, and components.</li>
+        </ul>
+
+        <h3 class="center">Our Family - A Wild Bunch:</h3>
+        <div class="center">
+            <center>
+<a href="aashmi2/my-family-web-page.html">VIEW FAMILY PAGE</a>
+</center>
+
+        </div>
+    </div>
+
+    <div class="section" id="projects">
+        <h2><u>Projects/Assignments</u></h2>
+        <div class="left">
+            <h3><u>Web Pages:-</u></h3>
+            <div class="project-links center">
+                <a href="aashmi2/school-web-page.html">Step into the world of learning!</a><br>
+                <a href="aashmi2/college web page.html">Where dreams meet direction — visit our college.</a><br>
+                <a href="aashmi2/e-commerce-website.html">Find what you love. Love what you buy.</a><br>
+                <a href="aashmi2/recipe-blog-2.html">Spice up your kitchen with new recipes!</a><br>
+                <a href="aashmi2/travel-blog-1.html">Discover your next adventure!</a>
+            </div>
+        </div>
+        <center>
+                    <img src="pics1/webpage1.jpg.png" width="400" height="400">
+            <img src="pics1/webpage2.jpg.png" width="500" height="400">
+        </center>
+
+        <div class="left">
+            <h3><u>My Creative Tinkercad Projects:-</u></h3>
+            <p>I use Tinkercad to create and simulate basic electronic circuits and bring my ideas to life. It helps me understand how different components work together in real-time. Through my projects, I've explored sensors, LEDs, buzzers, and more. Tinkercad has been a great platform for learning and experimenting with electronics in a fun and easy way.</p>
+        </div>
+                    <center>
+<img src="pics1/t1.jpg.png" width="400" height="400"/>
+<img src="pics1/t2.jpg.png" width="400" height="400"/>
+<img src="pics1/t3.jpg.png" width="400" height="400"/>
+<img src="pics1/t4.jpg.png" width="400" height="400"/>
+</center>
+        
+
+        <div class="left">
+            <h3><u>Robotics Project:-</u></h3>
+            <p>One of my exciting robotics projects is a line-following robot that uses IR sensors to detect and follow a black line on a white surface. The robot adjusts its movement based on the sensor input, allowing it to stay on track. This project helped me understand the basics of sensors, motor control, and decision-making in robotics. It was a fun and practical way to apply my electronics and coding knowledge.</p>
+        </div>
+        <center>
+            <img src="pics1/robot.jpg" alt="Robotics Project"  height="300" width="300"/>
+            <img src="pics1/robotics.jpg" alt="Robotics Project"  height="300" width="300"/>
+        </center>
+
+        <div class="left">
+            <h3><u>EW (Electronics Workshop) and LSA (Logic Sensing and Actuation):-</u></h3>
+            <ul>
+                <li>This project is a Police LED Light simulation created using red and blue LEDs controlled by a 555 timer IC. The circuit generates a blinking pattern that makes the LEDs flash alternately, just like real police lights. This simple yet effective project helped me learn about the working of the 555 timer, basic circuit design, and timing control using electronic components.</li>
+                <li>This LSA project is an Automatic Car Parking Gate system using an Arduino, an ultrasonic sensor, and a servo motor. The ultrasonic sensor detects when a vehicle comes close to the gate, and the Arduino controls the servo motor to automatically open or close the gate. This project helped me learn about distance sensing, motor control, and how automation can be applied in real-life parking systems.</li>
+            </ul>
+        </div>
+      <center>
+            <img src="pics1/pcb.jpg" alt="Electronics Project"  height="300" width="300"/>
+            <img src="pics1/PCB 1.jpg" alt="Electronics Project"  height="300" width="300"/>
+            <img src="pics1/automatic car parking gate.jpg" alt="LSA Project"  height="300" width="300"/>
+            <img src="pics1/lsa.jpg.png" alt="LSA Project"  height="300" width="300"/>
+            <img src="pics1/lsa1.jpg.png" alt="LSA Project"  height="300" width="300"/>
+  </center>
+
+        <div class="left">
+            <h3><u>Design Thinking:-</u></h3>
+            <p>Crowded canteens during lunch hours often lead to long waiting times, confusion, and discomfort for students and staff. Many people struggle to find seats, especially during peak hours, which causes frustration and wastes time. To solve this problem, I designed a simple seat booking website that allows users to reserve a seat in advance. This helps manage crowd flow, reduces waiting time, and creates a more organized and efficient canteen experience.</p>
+        </div>
+        <div class="design thinking center">
+             <a href="aashmi2/seat-booking.html">Reserve Your Throne</a>
+        </div>
+       <center>
+            <img src="pics1/dt.jpg" alt="Design Thinking Project"  height="300" width="300"/>
+            <img src="pics1/website.jpg.png" alt="Design Thinking Project"  height="300" width="300"/>
+     </center>
+
+        <h3 class="left"><u>Miscellaneous:-</u></h3>
+        <div class="img-grid">
+            <img src="pics1/bridge.jpg" alt="Miscellaneous Project"  height="300" width="300"/>
+            <img src="pics1/cse presentation.jpg" alt="Miscellaneous Project"  height="300" width="300"/>
+            <img src="pics1/projectile.jpg" alt="Miscellaneous Project"  height="300" width="300"/>
+        </div>
+    </div>
+
+    <div class="section left" id="skills">
+        <h2>Skills</h2>
+        <h3><u>Technical Skills:</u></h3>
+        
+        <div class="skill-container">
+            <div class="skill-name">C Language: 7/10</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 70%">70%</div>
+            </div>
+        </div>
+        
+        <div class="skill-container">
+            <div class="skill-name">Python Language: 8/10</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 80%">80%</div>
+            </div>
+        </div>
+        
+        <div class="skill-container">
+            <div class="skill-name">HTML: 9/10</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 90%">90%</div>
+            </div>
+        </div>
+        
+        <div class="skill-container">
+            <div class="skill-name">CSS: 7/10</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 70%">70%</div>
+            </div>
+        </div>
+        
+        <div class="skill-container">
+            <div class="skill-name">PCB Designing: 9/10</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 90%">90%</div>
+            </div>
+        </div>
+        
+        <div class="skill-container">
+            <div class="skill-name">Model Making: 9/10</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 90%">90%</div>
+            </div>
+        </div>
+        
+        <div class="skill-container">
+            <div class="skill-name">PPT MAKING AND PRESENTATION: 9/10</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 90%">90%</div>
+            </div>
+        </div>
+
+        <h3>Self Growth Skills:</h3>
+        <ul>
+            <li>Cooking</li>
+            <li>Art</li>
+            <li>Rangoli</li>
+            <li>Classical Dance</li>
+            <li>Journaling</li>
+        </ul>
+    </div>
+
+    <div class="section left" id="education">
+        <h2>Educational Certificates:-</h2>
+        <ul>
+            <li>Python Essentials 1 
+                <a href="pics1/python essentials1.jpg.png">Verified Credentials</a>
+            </li>
+            <li>Python Essentials 2 
+                <a href="pics1/PYTHON ESSENTIALS2.jpg.png">Verified Credentials</a>
+            </li>
+            <li>Digital Marketing 
+                <a href="pics1/DIGITAL MARKETING.jpg.png">Verified Credentials</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section left">
+        <h2>"What My Parents Planted in Me"</h2>
+        
+        <div class="parent-section">
+            <img src="pics1/mummyaashmi.jpg" class="parent-image"/>
+            <div class="parent-content">
+                <h3>From My Mother: The Heart's Gentle Whisper</h3>
+                <ul>
+                    <li>Respect is Love in Action – She taught me to treat everyone with kindness, no matter who they are.</li>
+                    <li>Speak with Honesty – Being frank is not rude—it's brave.</li>
+                    <li>Grace Over Grudge – Forgiveness brings more peace than revenge ever will.</li>
+                    <li>Silence is Strength Too – Sometimes, not reacting is the strongest response.</li>
+                    <li>Nurture, But Don't Neglect Yourself – Caring for others is beautiful, but don't forget your own soul.</li>
+                    <li>Elegance in Simplicity – You don't need loud colors to shine.</li>
+                    <li>Tears Are Not Weakness – Feeling deeply is a gift.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="parent-section">
+            <div class="parent-content">
+                <h3>From My Father: The Voice of Strength</h3>
+                <ul>
+                    <li>Stand on Your Own Feet – He taught me that independence is dignity.</li>
+                    <li>Be Soft, but Don't Break – Strength can wear a smile and still set boundaries.</li>
+                    <li>Face the World, Don't Hide – Even if your voice shakes, speak up.</li>
+                    <li>Earn Your Place – Don't wait for permission to chase your dreams.</li>
+                    <li>Protect Your Values Fiercely – Your integrity is priceless.</li>
+                    <li>Don't Let the World Harden You – Stay kind even when it's not easy.</li>
+                    <li>Courage Isn't Loud – Sometimes, it's the quiet decision to keep going.</li>
+                </ul>
+            </div>
+            <img src="pics1/papaandaashmi.jpg" class="parent-image"/>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section at the End -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="contact-card">
+            <h2>GET IN TOUCH</h2>
+            <h3>Aashmi Patro</h3>
+            <p>ENTC Engineer | First Year BTech Student</p>
+            <div class="contact-info">
+                <a href="mailto:202401070216@mitaoe.ac.in">patroanil98@gmail.com</a>
+                <a href="tel:+918446208695">+91 1234567892</a>
+            </div>
+            <p>Feel free to reach out for collaborations or opportunities!</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Aashmi Patro | MIT Academy of Engineering</p>
+</footer>
+
+</body>
+</html>
